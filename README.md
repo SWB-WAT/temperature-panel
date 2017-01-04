@@ -29,3 +29,23 @@ sudo crontab -e
 ```
 * * * * * /usr/bin/python /home/temp-emulator/sensor-emulator-master/sensor.py
 ```
+## Opis
+#### Panel temperatury
+Strona internetowa jest zrealizowana w języku PHP, posiada pojedyńczą podstronę która jest odświerzana dynamicznie co 5 sekund przy użyciu technologii Ajax. 
+Serwer oczekuje na zapytanie POST protokołu PHP na podstronie "http://adres_serwera/api.php". Po otrzymaniu zapytania wyciąga z zapytania informację o identyfikatorze czujnika, zmierzonej temperaturze, a następnie wyszukuje czy istnieje już czujka o zadanym identyfikatorze jeżeli istnieje to zmienia wartość temperatury jeżeli nie to dodaje nowy wpis do pliku. Dane o czujnikach są przechowywane w formacie JSON który prezentuję się następująco :
+````
+[
+  {
+    "last_measure":25.5,
+    "last_measure_time":1480797597,
+    "sensor_name":"sensor9"
+  },
+  {
+    "last_measure":-15.5,
+    "last_measure_time":1480797321,
+    "sensor_name":"sensor5"
+  }
+]
+```
+#### Emulator czujników temperatury
+Emulator czujników temperatury został zrealizowany w języku python. Skrypt wysyła dane o temperaturze do serwera php metodą POST protokołu Http. Liczba czujek jest losowa w zakresie od 1 do 15. Każda czujka generuje oddzielne zapytanie http, tak by odpowiadało to rzeczywistym warunkom (każda czujka w innej lokalizacji). Zapytanie jest genrowane co 5 sekund. 
