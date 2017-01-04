@@ -26,4 +26,6 @@ sudo crontab -e
 
 ```
 #### Dodaj wpis do tablicy
+```
 * * * * * /usr/bin/python /home/temp-emulator/sensor-emulator-master/sensor.py
+```
