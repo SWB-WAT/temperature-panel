@@ -48,7 +48,10 @@ Serwer oczekuje na zapytanie POST protokołu PHP na podstronie "http://adres_ser
 ]
 ```
 #### Emulator czujników temperatury
-Emulator czujników temperatury został zrealizowany w języku python. Skrypt wysyła dane o temperaturze do serwera php metodą POST protokołu Http. Liczba czujek jest losowa w zakresie od 1 do 15. Temperatura dla każdej czujki jest generowana w zakresie -45.0 - 45.0. Każda czujka generuje oddzielne zapytanie http, tak by odpowiadało to rzeczywistym warunkom (każda czujka w innej lokalizacji). Zapytanie jest genrowane co 5 sekund. 
+Emulator czujników temperatury został zrealizowany w języku python. Skrypt wysyła dane o temperaturze do serwera php metodą POST protokołu Http. Liczba czujek jest losowa w zakresie od 1 do 15. Temperatura dla każdej czujki jest generowana w zakresie -45.0 - 45.0. Każda czujka generuje oddzielne zapytanie http, tak by odpowiadało to rzeczywistym warunkom (każda czujka w innej lokalizacji). Zapytanie jest genrowane co 5 sekund. Zawartość pola danych w zapytaniu POST : 
+````
+{'last_measure': 13.0, 'sensor_name' : 'nazwa_sensora'}
+```
 
 #### Kod dla pojedynczej czujki
 
