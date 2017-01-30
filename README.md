@@ -1,3 +1,6 @@
+# Autorzy
+Daniel Karwowski
+Łukassz Nojszewski
 # Panel Temperatury
 ## Instrukcja instalacji
 #### Apache + PHP
